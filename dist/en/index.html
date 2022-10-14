@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>IIIF Downloader</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<span id="lang-buttons">
+		<button type="button" id="langEN">EN</button>
+		<button type="button" id="langPL">PL</button>
+	</span>
+	<form>
+		<label for="manifestURL" required> Manifest: </br></label>
+		<input type="text" id="manifestURL"> <button type="button" id="help-manifest">?</button> </br>
+	
+		<label for="region" required> Region: </br></label>
+		<input type="text" id="region" value="full"> <button type="button" id="help-region">?</button></br>
+		
+		<label for="size" required> Size: </br></label>
+		<input type="text" id="size" value="2000,"> <button type="button" id="help-size">?</button></br>
+		
+		<label for="rotation" required> Rotation: </br></label>
+		<select id="rotation">
+			<option value="0">0</option>
+			<option value="90">90</option>
+			<option value="180">180</option>
+			<option value="270">270</option>
+		</select> <button type="button" id="help-rotation">?</button></br>
+		
+		<label for="quality"> Quality: </br></label>
+		<select id="quality">
+			<option value="default">default</option>
+			<option value="color">color</option>
+			<option value="gray">gray</option>
+			<option value="bitonal">bitonal</option>
+		</select> <button type="button" id="help-quality">?</button></br>
+		
+		<label for="format"> Format: </br></label>
+		<select id="format">
+			<option value="jpg">.jpg</option>
+		</select> <button type="button" id="help-format">?</button></br>
+
+		<label for="pages"> Pages: </br></label>
+		<input type="number" id="pageRangeStart"> <button type="button" id="help-pages">?</button>
+		<input type="number" id="pageRangeStop"></br>
+		
+		<input type="radio" id="zip" name="downloadFormat" value="zip" class="radio" checked>
+		<label for="zip">zip</label>
+		<input type="radio" id="pdf" name="downloadFormat" value="pdf" class="radio">
+		<label for="pdf">pdf</label>
+		
+		<button type="button" id="download">Save</button>
+		<p id="messages"></p>
+		<p id="message-progress">Preparing your file. This might take a while.</p>
+		<p id="message-success">Your file is ready.</p>
+		<p id="message-error">Something went wrong.</p>
+	</form>
+	
+	<!--The divs below should contain instructions for corresponding form fields-->
+	
+	<div id="manifest-instructions">
+	This field should contain an URL address of the IIIF collection manifest.
+	</div>
+	<div id="region-instructions">
+	If you don't need the whole image, you can enter coordinates for desired region. Leave this as 'full' otherwise.
+	</div>
+	<div id="size-instructions">
+	You can specify the image resolution.
+	<div id="rotation-instructions">
+	The images can be rotated.
+	</div>
+	<div id="quality-instructions">
+	You can choose if you want your images in ful color, grayscale or just black and white.
+	</div>
+	<div id="format-instructions">
+	Currently, only jpg format is supported.
+	</div>
+	<div id="pages-instructions">
+	You can specify a range of pages to download. Leaving these fields empty will result in the whole collection being saved. This may sometimes lead to very long wait times.
+	</div>
+	
+	<script src="../main.js"></script>
+</body>
+</html>

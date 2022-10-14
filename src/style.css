@@ -1,0 +1,47 @@
+body{
+	background-color: #FFF;
+	accent-color: #444;
+
+
+}
+form{
+  /* Center the form on the page */
+	margin: 0 auto;
+	width: 400px;
+  /* Form outline */
+	padding: 1em;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+	color: #CCC;
+	font: 1em sans-serif;
+}
+
+button{
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+	margin: .3em;
+	background-color: #444;
+	color: #CCC;
+}
+
+input,
+select{
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+	font: 1em sans-serif;
+	background-color: #444;
+  /* Uniform text field size */
+	width: 300px;
+	box-sizing: border-box;
+
+  /* Match form field borders */
+	border: 1px solid #999;
+	color: #CCC;
+	margin-top: .2em;
+	margin-bottom: .5em;
+}
+
+.radio{
+	width: 1em;
+}
+
